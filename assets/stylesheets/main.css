@@ -192,11 +192,13 @@
   @media all and (min-width: 600px) {
     .productImage {
       display: none;
+     
     }
 
 
     .desktopProduct {
       display: block;
+      border-radius: 10px 0 0 10px;
     }
 
     .mainSection {
@@ -207,6 +209,7 @@
 
     .adSection {
       width: 17rem;
+      border-radius: 0 10px 10px 0;
     }
 
     .gabrielle {
