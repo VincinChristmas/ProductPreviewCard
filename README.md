@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://vincinchristmas.github.io/ProductPreviewCard/)
+- Solution URL: [the solution on frontend mentor](https://your-solution-url.com)
+- Live Site URL: [The live site](https://vincinchristmas.github.io/ProductPreviewCard/)
 
 ## My process
 
