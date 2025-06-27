@@ -1,237 +1,247 @@
-/**** Imported Styles ****/
-@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Young+Serif&display=swap');
-
-
-:root {
-    /*colors*/
-    --clr-primary-400: hsl(158, 36%, 37%);
-    --clr-secondary-200: hsl(30, 38%, 92%);
-    --clr-neutral-900: hsl(212, 21%, 14%);
-    --clr-neutral-400: hsl(228, 12%, 48%);
-    --clr-neutral-100: hsl(0, 0%, 100%);
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
-    2. Remove default margin
-  */
-  * {
-    margin: 0;
-    max-width: 100%;
-  }
-  /*
-    Typographic tweaks!
-    3. Add accessible line-height
-    4. Improve text rendering
-  */
-  body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--clr-secondary-200);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
-    5. Improve media defaults
-  */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
-    6. Remove built-in form typography styles
-  */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
-    7. Avoid text overflows
-  */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
-    8. Create a root stacking context
-  */
-  #root, #__next {
-    isolation: isolate;
-  }
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-green-500: hsl(158, 36%, 37%);
+  --color-green-700: hsl(158, 42%, 18%);
+  --color-black: hsl(212, 21%, 14%);
+  --color-grey: hsl(228, 12%, 48%);
+  --color-cream: hsl(30, 38%, 92%);
+  --color-white: hsl(0, 0%, 100%);
+  
+  /* Typography */
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-size-paragraph: 14px;
+}
 
-  /*
-    Main Section
-  */
+/* Base Styles */
+body {
+  font-family: var(--font-montserrat);
+  font-size: var(--font-size-paragraph);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-grey);
+  background-color: var(--color-cream);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
 
-  .mainSection {
-    padding: 1rem;
-    width: 100%;
-   /* width: 23.443rem; */
-  }
+/* Container */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-   /*
-    Product Image CSS
-  */
+/* Product Card */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
 
-  .productImage {
-    border-radius: 10px 10px 0 0;
-  }
+/* Product Image */
+.product-image {
+  flex: 1;
+}
 
-  .desktopProduct {
-    display: none;
-    width: 100%;
-  }
+.product-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
 
-  /*
-    The ad Section CSS
-  */
+/* Product Content */
+.product-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  .adSection {
-    background: var(--clr-neutral-100);
-    padding: 1.312rem;
-    border-radius: 0 0 10px 10px;
-  }
+/* Product Category */
+.product-category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  color: var(--color-grey);
+  margin-bottom: 0.5rem;
+}
 
-  /*
-    Perfume Title
-  */
+/* Product Title */
+.product-title {
+  font-family: var(--font-fraunces);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
 
-  .perfumeTitle {
-    color: var(--clr-neutral-400);
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 0.653rem;
-    letter-spacing: .321rem;
-  }
+/* Product Description */
+.product-description {
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
 
-  /*
-    Gabrielle Sentence
-  */
+/* Product Price */
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-  .gabrielle {
-    font-family: "Fraunces", serif;
-    font-style: normal;
-    font-variation-settings:
-    "SOFT" 0,
-    "WONK" 0;
-    font-optical-sizing: auto;
-    width: 17rem;
-    margin-top: 0.721rem;
-    margin-bottom: 0.743rem;
-    font-size: 1.965rem;
-    line-height: 1.863rem;
-  }
+.current-price {
+  font-family: var(--font-fraunces);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-green-500);
+}
 
-  /*
-    The Paragraph
-  */
+.original-price {
+  text-decoration: line-through;
+  color: var(--color-grey);
+}
 
-  .theParagraph {
-    color: var(--clr-neutral-400);
-    font-family: "Montserrat", sans-serif;
-    font-style: normal;
-    font-size: 0.855rem;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    width: 18.342rem;
-    line-height: 1.295rem;
-    margin-bottom: 1.454rem;
-  }
+/* Add to Cart Button */
+.add-to-cart-btn {
+  background-color: var(--color-green-500);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
 
-  /*
-    The Current Price
-  */
+.add-to-cart-btn:hover,
+.add-to-cart-btn:focus {
+  background-color: var(--color-green-700);
+  outline: none;
+}
 
-  .thePrices {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.6rem;
-  }
+.add-to-cart-btn:active {
+  transform: translateY(1px);
+}
 
-  .currentPrice {
-    color: var(--clr-primary-400);
-    margin-right: 1.342rem;
-    font-family: "Fraunces", serif;
-    font-size: 1.965rem;
+.cart-icon {
+  width: 15px;
+  height: 16px;
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-grey);
+}
+
+.attribution a {
+  color: var(--color-green-500);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: var(--color-green-700);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .container {
+    max-width: 600px;
   }
   
-  .oldPrice {
-    color: var(--clr-neutral-400);
-    font-family: "Montserrat", sans-serif;
-    font-size: 0.7rem;
-    text-decoration: line-through;
+  .product-card {
+    flex-direction: row;
+    min-height: 450px;
   }
-
-  .addTo {
-    display: flex;
-    align-items: center;
+  
+  .product-image {
+    flex: 1;
+  }
+  
+  .product-img {
+    height: 100%;
+    min-height: 450px;
+  }
+  
+  .product-content {
+    flex: 1;
+    padding: 2.5rem;
     justify-content: center;
-    font-family: "Montserrat", sans-serif;
-    background: var(--clr-primary-400);
-    color: var(--clr-neutral-100);
-    border: none;
-    border-radius: 7px;
-    padding: 0.7rem;
-    font-weight: 700;
-    font-size: 0.734rem;
-    width: 19rem;
   }
-
-  .addTo:hover {
-    opacity: 0.7;
-    cursor: pointer;
-  }
-
-  .kart {
-    margin-right: 1rem;
-  }
-
-  @media all and (min-width: 600px) {
-    .productImage {
-      display: none;
-     
-    }
-
-
-    .desktopProduct {
-      display: block;
-      border-radius: 10px 0 0 10px;
-    }
-
-    .mainSection {
-     margin-top: 3rem;
-     display: flex;
-     justify-content: center;
-    }
-
-    .adSection {
-      width: 17rem;
-      border-radius: 0 10px 10px 0;
-    }
-
-    .gabrielle {
-      margin-top: 3rem;
-    }
-
-    .theParagraph {
-     padding-top: 1.5rem;
-    }
-
-    .addTo {
-      margin-top: 1rem;
-    }
-  }
-
-  @media all and (min-width: 700px) {
-    .mainSection {
-      display: flex;
-      margin: 0 auto;
-      width: 38rem;
-      margin-top: 3rem;
-    }
-  }
-
   
+  .product-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .product-description {
+    margin-bottom: 1rem;
+  }
+  
+  .product-price {
+    margin-bottom: 1.5rem;
+  }
+  
+  .add-to-cart-btn {
+    margin-top: 1rem;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 700px;
+  }
+  
+  .product-content {
+    padding: 3rem;
+  }
+  
+  .product-title {
+    font-size: 2.75rem;
+  }
+}
+
+/* Focus styles for accessibility */
+.add-to-cart-btn:focus-visible {
+  outline: 2px solid var(--color-green-500);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .add-to-cart-btn {
+    transition: none;
+  }
+  
+  .add-to-cart-btn:active {
+    transform: none;
+  }
+} 
